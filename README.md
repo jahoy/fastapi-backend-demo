@@ -10,47 +10,47 @@ digital ocean(클라우드)에서 서버 3개를 띄운 다음에 load testing �
 
 # 파일 구조
 
-├── Dockerfile
-├── README.md
-├── app
-│   ├── models
-│   │   ├── author.py
-│   │   ├── book.py
-│   │   ├── jwt_user.py
-│   │   └── user.py
-│   ├── routes
-│   │   ├── v1.py
-│   │   └── v2.py
-│   ├── run.py
-│   ├── tests
-│   │   ├── ab_jsons
-│   │   │   └── post_user.json
-│   │   ├── all_tests.py
-│   │   └── locust_load_test.py
-│   └── utils
-│       ├── config.py
-│       ├── db.py
-│       ├── db_functions.py
-│       ├── db_object.py
-│       ├── helper_functions.py
-│       ├── redis_object.py
-│       └── security.py
-├── deploy.sh
-├── nginx-https
-│   ├── Dockerfile
-│   ├── bookstore.nginx
-│   ├── certbot.sh
-│   ├── entrypoint.sh
-│   ├── nginx.conf
-│   └── ssl-options
-│       ├── options-nginx-ssl.conf
-│       └── ssl-dhparams.pem
-├── nginx-reverse-proxy
-│   ├── Dockerfile
-│   ├── bookstore.nginx
-│   └── nginx.conf
-├── requirements.txt
+    ├── Dockerfile
+    ├── README.md
+    ├── app
+    │   ├── models
+    │   │   ├── author.py
+    │   │   ├── book.py
+    │   │   ├── jwt_user.py
+    │   │   └── user.py
+    │   ├── routes
+    │   │   ├── v1.py
+    │   │   └── v2.py
+    │   ├── run.py
+    │   ├── tests
+    │   │   ├── ab_jsons
+    │   │   │   └── post_user.json
+    │   │   ├── all_tests.py
+    │   │   └── locust_load_test.py
+    │   └── utils
+    │       ├── config.py
+    │       ├── db.py
+    │       ├── db_functions.py
+    │       ├── db_object.py
+    │       ├── helper_functions.py
+    │       ├── redis_object.py
+    │       └── security.py
+    ├── deploy.sh
+    ├── nginx-https
+    │   ├── Dockerfile
+    │   ├── bookstore.nginx
+    │   ├── certbot.sh
+    │   ├── entrypoint.sh
+    │   ├── nginx.conf
+    │   └── ssl-options
+    │       ├── options-nginx-ssl.conf
+    │       └── ssl-dhparams.pem
+    ├── nginx-reverse-proxy
+    │   ├── Dockerfile
+    │   ├── bookstore.nginx
+    │   └── nginx.conf
+    ├── requirements.txt
 
 # 실행법
 
-./deploy.sh
+    ./deploy.sh
