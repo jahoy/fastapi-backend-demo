@@ -1,0 +1,33 @@
+
+limit_req_zone $binary_remote_addr zone=bookstore:10m rate=5r/m;
+
+server {
+    listen 80;
+
+    server_name bookstores.live;
+
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+}
+
+server {
+    listen 443 ssl;
+    server_name bookstores.live;
+
+    ssl_certificate /usr/share/nginx/certificates/fullchain.pem;
+    ssl_certificate_key /usr/share/nginx/certificates/privkey.pem;
+    include /etc/ssl-options/options-nginx-ssl.conf;
+    ssl_dhparam /etc/ssl-options/ssl-dhparams.pem;
+
+    location /v1/user {
+        limit_req zone=bookstore;
+        proxy_pass http://167.71.12.65:3000;
+    }
+
+    location / {
+        proxy_pass http://167.71.12.65:3000/;
+    }
+
+}
